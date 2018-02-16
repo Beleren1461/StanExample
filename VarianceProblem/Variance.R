@@ -2,7 +2,7 @@ library(rstan)
 library(shinystan)
 
 theta_0=23 # True mean of generator process
-sigma.T=5 # True standard deviation of generator process
+sigma.T=10 # True standard deviation of generator process
 
 sigma_0 <- 100 # stadard deviation of prior distribution
 
@@ -38,4 +38,5 @@ Sample.sd <- sd(example$theta)
 ##### result https://en.wikipedia.org/wiki/Conjugate_prior 
 
 Posterior.sd <- sqrt((1/sigma_0^2+N/sigma.T^2)^-1)
+Posterior.mean <- Posterior.sd^2*(0/sigma_0^2+sum(Y)/sigma.T^2)
 
