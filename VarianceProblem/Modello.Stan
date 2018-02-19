@@ -11,7 +11,7 @@ data{
 }model{
   
   theta~ normal(0,sigma_0);
-  for(i in 1:N) Y ~ normal(theta,sigma);
+  Y ~ normal(theta,sigma);
   
 }
 
